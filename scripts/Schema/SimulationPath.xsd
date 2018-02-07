@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SimulationPath" xmlns:tns="http://www.example.org/SimulationPath" elementFormDefault="qualified">
+
+    <element name="paths" type="tns:SimulationPathTemplate"></element>
+    
+    <complexType name="SimulationPathTemplate">
+    	<sequence>
+    		<element name="path" type="tns:PathTemplate" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PathTemplate">
+    	<sequence>
+    		<element name="eventName" type="string" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

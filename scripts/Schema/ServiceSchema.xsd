@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ServiceSchema" xmlns:tns="http://www.example.org/ServiceSchema" elementFormDefault="qualified">
+
+    <element name="Service" type="tns:ServiceDefinition"></element>
+    
+    <complexType name="ServiceDefinition">
+    	<sequence>
+            <element name="Name" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="Variables" type="tns:VariablesListType"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="Activities" type="tns:ActivityList"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="Transitions" type="tns:TransitionList"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="StartTask" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="VariablesListType">
+    	<sequence>
+    		<element name="Variable" type="tns:VariableType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ActivityList">
+    	<sequence>
+    		<element name="Activity" type="tns:ActivityDefinition" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="TransitionList">
+    	<sequence>
+    		<element name="Transition" type="tns:TransitionType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="VariableType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Type" type="tns:DataType" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Value" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <simpleType name="DataType">
+    	<restriction base="string">
+    		<enumeration value="STRING"></enumeration>
+    		<enumeration value="INTEGER"></enumeration>
+    		<enumeration value="BOOLEAN"></enumeration>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="ActivityDefinition">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Type" type="tns:ActivityType" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Effect" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <simpleType name="ActivityType">
+    	<restriction base="string">
+    		<enumeration value="LocalTask"></enumeration>
+    		<enumeration value="ReceiveTask"></enumeration>
+    		<enumeration value="SendTask"></enumeration>
+    		<enumeration value="Service"></enumeration>
+    	</restriction>
+    </simpleType>
+    
+    <complexType name="TransitionType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Source" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Sink" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Guard" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SimulationConfiguration" xmlns:tns="http://www.example.org/SimulationConfiguration" elementFormDefault="qualified">
+
+    <element name="configuration" type="tns:SimulationConfigType"></element>
+    
+    <complexType name="SimulationConfigType">
+    	<sequence>
+    		<element name="eventTemplate" type="string"></element>
+    		<element name="pathTemplate" type="string"></element>
+    		<element name="correlationTemplate" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

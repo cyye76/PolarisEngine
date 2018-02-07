@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SimulationEventTemplate" xmlns:tns="http://www.example.org/SimulationEventTemplate" elementFormDefault="qualified">
+
+    <element name="events" type="tns:EventTemplateType"></element>
+    
+    <complexType name="EventTemplateType">
+    	<sequence>
+    		<element name="event" type="tns:EventTemplate" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EventTemplate">
+    	<sequence>
+    		<element name="eventName" type="string"></element>
+    		<element name="serviceName" type="string"></element>
+    		<element name="taskName" type="string"></element>
+    		<element name="variableName" type="string"></element>
+    		<element name="eventType" type="string"></element>
+    		<element name="faultyCondition" type="string"></element>
+    		<element name="rootcause" type="boolean"></element>
+    	</sequence>
+    </complexType>
+</schema>

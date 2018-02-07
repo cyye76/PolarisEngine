@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SimulationCorrelation" xmlns:tns="http://www.example.org/SimulationCorrelation" elementFormDefault="qualified">
+
+    <element name="correlations" type="tns:CorrelationTemplateType"></element>
+    
+    <complexType name="CorrelationTemplateType">
+    	<sequence>
+    		<element name="correlation" type="tns:CorrelationTemplate" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CorrelationTemplate">
+    	<sequence>
+    		<element name="source" type="string"></element>
+            <element name="destination" type="string"></element>
+            <element name="degree" type="float"></element>
+    	</sequence>
+    </complexType>
+</schema>

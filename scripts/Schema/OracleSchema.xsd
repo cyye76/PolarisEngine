@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/OracleSchema" xmlns:tns="http://www.example.org/OracleSchema" elementFormDefault="qualified">
+
+    <element name="Oracle" type="tns:OracleDefinition"></element>
+    
+    <complexType name="OracleDefinition">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="VariableMappings" type="tns:VariableMappingsType" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Constraints" type="tns:ConstraintsType"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ConstraintsType">
+    	<sequence>
+    		<element name="Constraint" type="tns:ConstraintDefinition" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ConstraintDefinition">
+    	<sequence>
+    		<element name="contents" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="VariableMappingsType">
+    	<sequence>
+    		<element name="VariableMapping" type="tns:VariableMappingDefinition" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="VariableMappingDefinition">
+    	<sequence>
+    		<element name="ServiceName" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="VarName" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="OracleVariable" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

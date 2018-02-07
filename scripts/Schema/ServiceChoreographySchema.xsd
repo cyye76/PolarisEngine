@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/ServiceChoreographySchema" xmlns:tns="http://www.example.org/ServiceChoreographySchema" elementFormDefault="qualified">
+
+    <element name="ServiceChoreography"
+    	type="tns:ServiceChoreographyType">
+    </element>
+    
+    <complexType name="ServiceChoreographyType">
+    	<sequence>
+    		<element name="Partners" type="tns:PartnerList" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PartnerList">
+    	<sequence>
+    		<element name="Partner" type="tns:PartnerType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+
+    <complexType name="PartnerType">
+    	<sequence>
+    		<element name="Name" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Port" type="string" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>
