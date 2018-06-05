@@ -1,0 +1,16 @@
+1) Compile a dynamic link lib (dll)
+   cd PolarisEngine
+   g++ -D_JNI_IMPLEMENTATION_ -I. –Iplugin -c plugin\atrace.c
+   g++ -Wall -D_JNI_IMPLEMENTATION_ -Wl,--kill-at -I. –Iplugin -shared -o atrace.dll atrace.o
+
+2) Configure tomcat:
+   go to the tomcat_home\bin
+   edit catalina.bat
+      find the line "rem execute the requsted command"
+      add the following JAVA_OPTS parameters to the end of the line 
+           set JAVA_OPTS=%JAVA_OPTS% -agentpath:plugin\atrace.dll=filterFile-%filters path%
+   run startup.bat to start tomcat
+   the traced message is kept in tomcat_home\bin\call.trace
+
+3) Configure Axis2
+   put POJO class into webapps\axis2\WEB-INF\pojo\
