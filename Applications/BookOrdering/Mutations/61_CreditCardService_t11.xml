@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>CreditCardService</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>61_CreditCardService_t11</mutationName>
+    <contents><![CDATA[new_amount >= 60 ]]></contents>
+</mutation>

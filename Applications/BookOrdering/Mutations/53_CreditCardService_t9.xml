@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>CreditCardService</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>53_CreditCardService_t9</mutationName>
+    <contents><![CDATA[creditcard_credit < credit_check_request && hasInterests == false ]]></contents>
+</mutation>

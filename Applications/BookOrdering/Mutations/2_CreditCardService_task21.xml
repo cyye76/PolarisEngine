@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>CreditCardService</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>2_CreditCardService_task21</mutationName>
+    <contents><![CDATA[creditcard_credit := 2 * creditcard_credit ; ]]></contents>
+</mutation>

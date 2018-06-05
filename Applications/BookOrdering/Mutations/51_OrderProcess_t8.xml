@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>51_OrderProcess_t8</mutationName>
+    <contents><![CDATA[credit_level > 0 ]]></contents>
+</mutation>
