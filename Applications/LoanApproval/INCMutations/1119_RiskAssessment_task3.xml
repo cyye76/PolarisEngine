@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>RiskAssessment</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1119_RiskAssessment_task3</mutationName>
+    <contents><![CDATA[riskLevel := low ;ICMutationVariable:=customerID + 22 ;]]></contents>
+</mutation>

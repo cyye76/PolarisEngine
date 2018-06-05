@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>LoanProcess</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>21_LoanProcess_task8</mutationName>
+    <contents><![CDATA[approval := actual_approval ;ICMutationVariable:= RandomVariable;]]></contents>
+</mutation>
