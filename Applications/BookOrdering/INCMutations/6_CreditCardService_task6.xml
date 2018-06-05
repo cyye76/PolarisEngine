@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>CreditCardService</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>6_CreditCardService_task6</mutationName>
+    <contents><![CDATA[approval := payment_request <= creditcard_credit ;ICMutationVariable:= RandomVariable;]]></contents>
+</mutation>
