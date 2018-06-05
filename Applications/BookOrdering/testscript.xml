@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:TestingScript xmlns:tns="http://www.example.org/TestingScriptSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/TestingScriptSchema ../../src/scripts/Schema/TestingScriptSchema.xsd ">
+  <tns:Name>TestScript</tns:Name>
+  <tns:Services>
+    <tns:serviceName><![CDATA[Applications/BookOrdering/OrderProcess.xml]]></tns:serviceName>
+    <tns:serviceName><![CDATA[Applications/BookOrdering/CreditCardService.xml]]></tns:serviceName>
+  </tns:Services>  
+  <tns:TestCase>
+    <tns:Name><![CDATA[Applications/BookOrdering/BookOrderingClient.xml]]></tns:Name>
+  </tns:TestCase>
+  <tns:Choreography>
+    <tns:Name><![CDATA[Applications/BookOrdering/Choreography.xml]]></tns:Name>
+  </tns:Choreography>
+  <tns:Oracle>
+    <tns:Name><![CDATA[Applications/BookOrdering/Oracle.xml]]></tns:Name>
+  </tns:Oracle>
+  <tns:Mutations>
+    <tns:CategoryName><![CDATA[Applications/BookOrdering/Mutations/mutations.txt]]></tns:CategoryName>
+  </tns:Mutations>
+  <tns:InconsistencyMutations>
+    <tns:CategoryName><![CDATA[Applications/BookOrdering/INCMutations/mutations.txt]]></tns:CategoryName>
+  </tns:InconsistencyMutations>
+</tns:TestingScript>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>BookOrderingClient</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>amount</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>account_credit</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>confirm</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>hasInterests</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>customerID</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>new_amount</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>creditcard_credit</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>notification</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>task1</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send amount account_credit confirm hasInterests customerID new_amount creditcard_credit </tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task2</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive notification</tns:Effect>
+    </tns:Activity>
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>task1</tns:Source>
+      <tns:Sink>task2</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+  </tns:Transitions>
+  <tns:StartTask>task1</tns:StartTask>
+</tns:Service>

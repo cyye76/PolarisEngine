@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Oracle xmlns:tns="http://www.example.org/OracleSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/OracleSchema ../../src/scripts/Schema/OracleSchema.xsd ">
+  <tns:Name>Oracle</tns:Name>
+  <tns:VariableMappings>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>amount</tns:VarName>
+      <tns:OracleVariable>O_amount</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>customerID</tns:VarName>
+      <tns:OracleVariable>O_customerID</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>confirm</tns:VarName>
+      <tns:OracleVariable>O_confirm</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>notification</tns:VarName>
+      <tns:OracleVariable>O_notification</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>credit_level</tns:VarName>
+      <tns:OracleVariable>O_credit_level</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>credit_check_request</tns:VarName>
+      <tns:OracleVariable>O_credit_check_request</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>account_credit</tns:VarName>
+      <tns:OracleVariable>O_account_credit</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>new_amount</tns:VarName>
+      <tns:OracleVariable>O_new_amount</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>payment_request</tns:VarName>
+      <tns:OracleVariable>O_payment_request</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>approval</tns:VarName>
+      <tns:OracleVariable>O_approval</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>hasInterests</tns:VarName>
+      <tns:OracleVariable>O_hasInterests</tns:OracleVariable>
+    </tns:VariableMapping>  
+    <tns:VariableMapping>
+      <tns:ServiceName>OrderProcess</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>O_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>         
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>customerID</tns:VarName>
+      <tns:OracleVariable>C_customerID</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>credit_check_request</tns:VarName>
+      <tns:OracleVariable>C_credit_check_request</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>creditcard_credit</tns:VarName>
+      <tns:OracleVariable>C_creditcard_credit</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>credit_level</tns:VarName>
+      <tns:OracleVariable>C_credit_level</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>payment_request</tns:VarName>
+      <tns:OracleVariable>C_payment_request</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>approval</tns:VarName>
+      <tns:OracleVariable>C_approval</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>new_amount</tns:VarName>
+      <tns:OracleVariable>C_new_amount</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>account_credit</tns:VarName>
+      <tns:OracleVariable>C_account_credit</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>hasInterests</tns:VarName>
+      <tns:OracleVariable>C_hasInterests</tns:OracleVariable>
+    </tns:VariableMapping>   
+    <tns:VariableMapping>
+      <tns:ServiceName>CreditCardService</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>C_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>      
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>amount</tns:VarName>
+      <tns:OracleVariable>B_amount</tns:OracleVariable>
+    </tns:VariableMapping>  
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>account_credit</tns:VarName>
+      <tns:OracleVariable>B_account_credit</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>confirm</tns:VarName>
+      <tns:OracleVariable>B_confirm</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>hasInterests</tns:VarName>
+      <tns:OracleVariable>B_hasInterests</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>customerID</tns:VarName>
+      <tns:OracleVariable>B_customerID</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>new_amount</tns:VarName>
+      <tns:OracleVariable>B_new_amount</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>creditcard_credit</tns:VarName>
+      <tns:OracleVariable>B_creditcard_credit</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>BookOrderingClient</tns:ServiceName>
+      <tns:VarName>notification</tns:VarName>
+      <tns:OracleVariable>B_notification</tns:OracleVariable>
+    </tns:VariableMapping>           
+  </tns:VariableMappings>
+  <tns:Constraints>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount > B_account_credit || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || O_credit_check_request == B_amount - B_account_credit]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == true ||O_credit_check_request > B_creditcard_credit || O_credit_level == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == false ||O_credit_check_request * 2 > B_creditcard_credit || O_credit_level == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == true ||O_credit_check_request <= B_creditcard_credit || O_credit_level == B_creditcard_credit ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == false ||O_credit_check_request * 2 <= B_creditcard_credit || O_credit_level == B_creditcard_credit / 2 ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == true ||O_credit_check_request > 2 * B_creditcard_credit || O_credit_level == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == false ||O_credit_check_request > B_creditcard_credit || O_credit_level == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == true ||O_credit_check_request <= 2 * B_creditcard_credit || O_credit_level == 2 * B_creditcard_credit ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == false ||O_credit_check_request <= B_creditcard_credit || O_credit_level == B_creditcard_credit ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == true ||O_credit_check_request > B_creditcard_credit || O_payment_request == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == false ||O_credit_check_request * 2 > B_creditcard_credit || O_payment_request == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == true ||O_credit_check_request  > 2 * B_creditcard_credit || O_payment_request == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == false ||O_credit_check_request  > B_creditcard_credit || O_payment_request == O_credit_check_request ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == true ||O_credit_check_request  > B_creditcard_credit || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == false ||O_credit_check_request * 2  > B_creditcard_credit || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == true ||O_credit_check_request  > 2 * B_creditcard_credit || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == false ||O_credit_check_request  > B_creditcard_credit || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == true ||O_credit_check_request  <= B_creditcard_credit || B_new_amount > O_credit_level + B_account_credit || B_new_amount <= 0 || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == false ||O_credit_check_request * 2 <= B_creditcard_credit || B_new_amount > O_credit_level + B_account_credit || B_new_amount <= 0 || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == true ||O_credit_check_request <= B_creditcard_credit || B_new_amount <= O_credit_level + B_account_credit || B_new_amount > 0 || B_notification == false ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID >= 60 || B_hasInterests == false ||O_credit_check_request *2 <= B_creditcard_credit || B_new_amount <= O_credit_level + B_account_credit || B_new_amount > 0 || B_notification == false ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == true ||O_credit_check_request  <= 2 * B_creditcard_credit || B_new_amount > O_credit_level + B_account_credit || B_new_amount <= 0 || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == false ||O_credit_check_request  <= B_creditcard_credit || B_new_amount > O_credit_level + B_account_credit || B_new_amount <= 0 || O_credit_level <= 0 || B_notification == true ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == true ||O_credit_check_request  <= 2 * B_creditcard_credit || B_new_amount <= O_credit_level + B_account_credit || B_new_amount > 0 || B_notification == false ]]></tns:contents>      
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[B_amount <= B_account_credit || B_customerID < 60 || B_hasInterests == false ||O_credit_check_request  <= B_creditcard_credit || B_new_amount <= O_credit_level + B_account_credit || B_new_amount > 0 || B_notification == false ]]></tns:contents>      
+    </tns:Constraint>
+    
+    <!-- inconsistency criteria -->
+    <tns:Constraint>
+      <!--tns:contents><![CDATA[O_ICMutationVariable * C_ICMutationVariable == 0]]></tns:contents-->      
+      <tns:contents><![CDATA[O_ICMutationVariable + C_ICMutationVariable <= 100 || O_ICMutationVariable * C_ICMutationVariable ==0]]></tns:contents>      
+    </tns:Constraint>    
+  </tns:Constraints>
+</tns:Oracle>

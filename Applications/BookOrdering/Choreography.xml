@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ServiceChoreography xmlns:tns="http://www.example.org/ServiceChoreographySchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceChoreographySchema ../../src/scripts/Schema/ServiceChoreographySchema.xsd ">
+  <tns:Partners>
+    <tns:Partner>
+      <tns:Name>OrderProcess</tns:Name>
+      <tns:Port>amount</tns:Port>
+      <tns:Port>hasInterests</tns:Port>
+      <tns:Port>customerID</tns:Port>
+      <tns:Port>account_credit</tns:Port>
+      <tns:Port>notification</tns:Port>
+      <tns:Port>credit_check_request</tns:Port>
+      <tns:Port>credit_level</tns:Port>
+      <tns:Port>confirm</tns:Port>
+      <tns:Port>payment_request</tns:Port>
+      <tns:Port>approval</tns:Port>
+      <tns:Port>new_amount</tns:Port>      
+    </tns:Partner>
+    <tns:Partner>
+      <tns:Name>CreditCardService</tns:Name>          
+      <tns:Port>customerID</tns:Port>
+      <tns:Port>credit_check_request</tns:Port>
+      <tns:Port>new_amount</tns:Port>      
+      <tns:Port>account_credit</tns:Port>      
+      <tns:Port>creditcard_credit</tns:Port>      
+      <tns:Port>hasInterests</tns:Port>      
+      <tns:Port>credit_level</tns:Port>      
+      <tns:Port>payment_request</tns:Port>      
+      <tns:Port>approval</tns:Port>            
+    </tns:Partner>        
+    <tns:Partner>
+      <tns:Name>BookOrderingClient</tns:Name> 
+      <tns:Port>amount</tns:Port>    
+      <tns:Port>account_credit</tns:Port>
+      <tns:Port>confirm</tns:Port>
+      <tns:Port>hasInterests</tns:Port>      
+      <tns:Port>customerID</tns:Port>
+      <tns:Port>new_amount</tns:Port>                 
+      <tns:Port>creditcard_credit</tns:Port>      
+      <tns:Port>notification</tns:Port>            
+    </tns:Partner>
+  </tns:Partners>
+</tns:ServiceChoreography>

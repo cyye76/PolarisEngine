@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>OrderProcess</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>amount</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>customerID</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>confirm</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>notification</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>credit_level</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>credit_check_request</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>account_credit</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>new_amount</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>payment_request</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>approval</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>hasInterests</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>  
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>  
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>  
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>task1</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive amount hasInterests</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task2</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive customerID</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task3</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive account_credit</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task4</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[credit_check_request := amount - account_credit ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task5</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[notification := true ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task6</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send notification</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task7</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send credit_check_request</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task8</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive credit_level</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task9</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[notification := false ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task10</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive confirm</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task11</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[payment_request := credit_check_request;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task12</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send payment_request</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task13</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive approval</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task14</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[notification := approval;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task15</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive new_amount</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task16</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[payment_request := new_amount - account_credit;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task17</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[notification := new_amount > 0 && new_amount <= account_credit;]]></tns:Effect>
+    </tns:Activity>
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>task1</tns:Source>
+      <tns:Sink>task2</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>task2</tns:Source>
+      <tns:Sink>task3</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>task3</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>task4</tns:Source>
+      <tns:Sink>task5</tns:Sink>
+      <tns:Guard><![CDATA[credit_check_request <= 0]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>task5</tns:Source>
+      <tns:Sink>task6</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>task4</tns:Source>
+      <tns:Sink>task7</tns:Sink>
+      <tns:Guard><![CDATA[credit_check_request > 0]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>task7</tns:Source>
+      <tns:Sink>task8</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t8</tns:Name>
+      <tns:Source>task8</tns:Source>
+      <tns:Sink>task9</tns:Sink>
+      <tns:Guard><![CDATA[credit_level <= 0]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t9</tns:Name>
+      <tns:Source>task9</tns:Source>
+      <tns:Sink>task6</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t10</tns:Name>
+      <tns:Source>task8</tns:Source>
+      <tns:Sink>task10</tns:Sink>
+      <tns:Guard><![CDATA[credit_level >= credit_check_request]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t11</tns:Name>
+      <tns:Source>task10</tns:Source>
+      <tns:Sink>task11</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t12</tns:Name>
+      <tns:Source>task11</tns:Source>
+      <tns:Sink>task12</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t13</tns:Name>
+      <tns:Source>task12</tns:Source>
+      <tns:Sink>task13</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t14</tns:Name>
+      <tns:Source>task13</tns:Source>
+      <tns:Sink>task14</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t15</tns:Name>
+      <tns:Source>task14</tns:Source>
+      <tns:Sink>task6</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t16</tns:Name>
+      <tns:Source>task8</tns:Source>
+      <tns:Sink>task15</tns:Sink>
+      <tns:Guard><![CDATA[credit_level < credit_check_request && credit_level > 0]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t17</tns:Name>
+      <tns:Source>task15</tns:Source>
+      <tns:Sink>task16</tns:Sink>
+      <tns:Guard><![CDATA[new_amount <= credit_level + account_credit && new_amount > account_credit]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t18</tns:Name>
+      <tns:Source>task16</tns:Source>
+      <tns:Sink>task12</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t19</tns:Name>
+      <tns:Source>task15</tns:Source>
+      <tns:Sink>task17</tns:Sink>
+      <tns:Guard><![CDATA[new_amount > credit_level + account_credit || new_amount <= account_credit]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t20</tns:Name>
+      <tns:Source>task17</tns:Source>
+      <tns:Sink>task6</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+  </tns:Transitions>
+  <tns:StartTask>task1</tns:StartTask>
+</tns:Service>
