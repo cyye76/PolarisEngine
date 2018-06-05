@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>LoanProcess</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>14_LoanProcess_t5</mutationName>
+    <contents><![CDATA[actual_approval >= 50 ]]></contents>
+</mutation>

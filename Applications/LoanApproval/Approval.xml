@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>Approval</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>amount</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>rejected</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>true</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>actual_approval</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>    
+    <tns:Variable>
+      <tns:Name>ApprovalRequest</tns:Name>
+      <tns:Type>STRING</tns:Type>
+      <tns:Value>random</tns:Value>
+    </tns:Variable> 
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>     
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>task1</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive amount ApprovalRequest</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task2</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive rejected</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task3</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[actual_approval:=0;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task4</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send actual_approval</tns:Effect>
+    </tns:Activity>    
+    <tns:Activity>
+      <tns:Name>task5</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[actual_approval:=amount;]]></tns:Effect>
+    </tns:Activity>    
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>task1</tns:Source>
+      <tns:Sink>task2</tns:Sink>
+      <tns:Guard><![CDATA[amount<90]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>task2</tns:Source>
+      <tns:Sink>task3</tns:Sink>
+      <tns:Guard><![CDATA[rejected == true]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>task3</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>task2</tns:Source>
+      <tns:Sink>task5</tns:Sink>
+      <tns:Guard><![CDATA[rejected == false]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>task1</tns:Source>
+      <tns:Sink>task3</tns:Sink>
+      <tns:Guard><![CDATA[amount >= 90]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>task5</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+  </tns:Transitions>
+  <tns:StartTask>task1</tns:StartTask>
+</tns:Service>
