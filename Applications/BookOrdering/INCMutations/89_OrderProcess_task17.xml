@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>89_OrderProcess_task17</mutationName>
+    <contents><![CDATA[notification := new_amount > 0 && new_amount <= account_credit;ICMutationVariable:= RandomVariable;]]></contents>
+</mutation>
