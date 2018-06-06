@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>20_OrderProcess_task16</mutationName>
+    <contents><![CDATA[payment_request := new_amount - credit_check_request ; ]]></contents>
+</mutation>
