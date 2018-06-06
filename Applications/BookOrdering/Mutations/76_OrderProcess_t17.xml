@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>76_OrderProcess_t17</mutationName>
+    <contents><![CDATA[new_amount >= credit_level + account_credit && new_amount > account_credit ]]></contents>
+</mutation>
