@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1038_OrderProcess_task9</mutationName>
+    <contents><![CDATA[notification := false ;ICMutationVariable:=credit_level + 22 ;]]></contents>
+</mutation>

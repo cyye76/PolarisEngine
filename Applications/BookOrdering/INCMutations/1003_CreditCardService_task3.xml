@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>CreditCardService</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1003_CreditCardService_task3</mutationName>
+    <contents><![CDATA[credit_level := creditcard_credit ;ICMutationVariable:=credit_level + 16 ;]]></contents>
+</mutation>

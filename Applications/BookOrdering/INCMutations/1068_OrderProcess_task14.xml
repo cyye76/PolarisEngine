@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1068_OrderProcess_task14</mutationName>
+    <contents><![CDATA[notification := approval;ICMutationVariable:=amount + 21 ;]]></contents>
+</mutation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>OrderProcess</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1050_OrderProcess_task11</mutationName>
+    <contents><![CDATA[payment_request := credit_check_request;ICMutationVariable:=new_amount + 4 ;]]></contents>
+</mutation>
