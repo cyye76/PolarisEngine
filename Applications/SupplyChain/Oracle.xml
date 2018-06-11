@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Oracle xmlns:tns="http://www.example.org/OracleSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/OracleSchema ../../src/scripts/Schema/OracleSchema.xsd ">
+  <tns:Name>tns:Name</tns:Name>
+  <tns:VariableMappings>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>amount</tns:VarName>
+      <tns:OracleVariable>R_amount</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>product_type</tns:VarName>
+      <tns:OracleVariable>R_product_type</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>stockA</tns:VarName>
+      <tns:OracleVariable>R_stockA</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>stockB</tns:VarName>
+      <tns:OracleVariable>R_stockB</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>stockC</tns:VarName>
+      <tns:OracleVariable>R_stockC</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>requested</tns:VarName>
+      <tns:OracleVariable>R_requested</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>deliver</tns:VarName>
+      <tns:OracleVariable>R_deliver</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>complemented</tns:VarName>
+      <tns:OracleVariable>R_complemented</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>manufacturer_stock</tns:VarName>
+      <tns:OracleVariable>R_manufacturer_stock</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>factoryA_can_produce</tns:VarName>
+      <tns:OracleVariable>R_factoryA_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>factoryB_can_produce</tns:VarName>
+      <tns:OracleVariable>R_factoryB_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>factoryC_can_produce</tns:VarName>
+      <tns:OracleVariable>R_factoryC_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>Retailer</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>R_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>product_type</tns:VarName>
+      <tns:OracleVariable>M_product_type</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>requested</tns:VarName>
+      <tns:OracleVariable>M_requested</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>manufacturer_stock</tns:VarName>
+      <tns:OracleVariable>M_manufacturer_stock</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>complemented</tns:VarName>
+      <tns:OracleVariable>M_complemented</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>factoryA_can_produce</tns:VarName>
+      <tns:OracleVariable>M_factoryA_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>factoryB_can_produce</tns:VarName>
+      <tns:OracleVariable>M_factoryB_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>factoryC_can_produce</tns:VarName>
+      <tns:OracleVariable>M_factoryC_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>     
+    <tns:VariableMapping>
+      <tns:ServiceName>Manufacturer</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>M_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping> 
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>amount</tns:VarName>
+      <tns:OracleVariable>S_amount</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>product_type</tns:VarName>
+      <tns:OracleVariable>S_product_type</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>stockA</tns:VarName>
+      <tns:OracleVariable>S_stockA</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>stockB</tns:VarName>
+      <tns:OracleVariable>S_stockB</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>stockC</tns:VarName>
+      <tns:OracleVariable>S_stockC</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>deliver</tns:VarName>
+      <tns:OracleVariable>S_deliver</tns:OracleVariable>
+    </tns:VariableMapping>    
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>manufacturer_stock</tns:VarName>
+      <tns:OracleVariable>S_manufacturer_stock</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>factoryA_can_produce</tns:VarName>
+      <tns:OracleVariable>S_factoryA_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>factoryB_can_produce</tns:VarName>
+      <tns:OracleVariable>S_factoryB_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>SupplyChainClient</tns:ServiceName>
+      <tns:VarName>factoryC_can_produce</tns:VarName>
+      <tns:OracleVariable>S_factoryC_can_produce</tns:OracleVariable>
+    </tns:VariableMapping>   
+  </tns:VariableMappings>
+  <tns:Constraints>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=0 || S_stockA < S_amount || S_deliver == S_amount]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=0 || S_stockA >= S_amount || S_stockA + S_manufacturer_stock < S_amount || (R_requested == S_amount - S_stockA && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == S_manufacturer_stock - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=0 || S_stockA + S_manufacturer_stock >= S_amount || S_stockA + S_manufacturer_stock + S_factoryA_can_produce < S_amount || (R_requested == S_amount - S_stockA && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == S_manufacturer_stock + S_factoryA_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=0 || S_stockA + S_manufacturer_stock + S_factoryA_can_produce >= S_amount || S_stockA + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce < S_amount || (R_requested == S_amount - S_stockA && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=0 || S_stockA + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce >= S_amount || S_stockA + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce < S_amount || (R_requested == S_amount - S_stockA && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == 0 && M_factoryC_can_produce == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+        <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=0 || S_stockA + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce >= S_amount || (R_requested == S_amount - S_stockA && S_deliver == S_stockA + R_complemented && R_complemented == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == 0 && M_factoryC_can_produce == 0) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=1 || S_stockB < S_amount || S_deliver == S_amount]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=1 || S_stockB >= S_amount || S_stockB + S_manufacturer_stock < S_amount || (R_requested == S_amount - S_stockB && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == S_manufacturer_stock - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=1 || S_stockB + S_manufacturer_stock >= S_amount || S_stockB + S_manufacturer_stock + S_factoryA_can_produce < S_amount || (R_requested == S_amount - S_stockB && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == S_manufacturer_stock + S_factoryA_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=1 || S_stockB + S_manufacturer_stock + S_factoryA_can_produce >= S_amount || S_stockB + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce < S_amount || (R_requested == S_amount - S_stockB && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=1 || S_stockB + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce >= S_amount || S_stockB + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce < S_amount || (R_requested == S_amount - S_stockB && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == 0 && M_factoryC_can_produce == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+        <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=1 || S_stockB + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce >= S_amount || (R_requested == S_amount - S_stockB && S_deliver == S_stockB + R_complemented && R_complemented == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == 0 && M_factoryC_can_produce == 0) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=2 || S_stockC < S_amount || S_deliver == S_amount]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=2 || S_stockC >= S_amount || S_stockC + S_manufacturer_stock < S_amount || (R_requested == S_amount - S_stockC && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == S_manufacturer_stock - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=2 || S_stockC + S_manufacturer_stock >= S_amount || S_stockC + S_manufacturer_stock + S_factoryA_can_produce < S_amount || (R_requested == S_amount - S_stockC && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == S_manufacturer_stock + S_factoryA_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=2 || S_stockC + S_manufacturer_stock + S_factoryA_can_produce >= S_amount || S_stockC + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce < S_amount || (R_requested == S_amount - S_stockC && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+    <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=2 || S_stockC + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce >= S_amount || S_stockC + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce < S_amount || (R_requested == S_amount - S_stockC && S_deliver == S_amount && R_complemented == R_requested && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == 0 && M_factoryC_can_produce == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce - M_complemented) ]]></tns:contents>
+    </tns:Constraint>
+        <tns:Constraint>
+      <tns:contents><![CDATA[S_product_type !=2 || S_stockC + S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce >= S_amount || (R_requested == S_amount - S_stockC && S_deliver == S_stockC + R_complemented && R_complemented == S_manufacturer_stock + S_factoryA_can_produce + S_factoryB_can_produce + S_factoryC_can_produce && M_manufacturer_stock == 0 && M_factoryA_can_produce == 0 && M_factoryB_can_produce == 0 && M_factoryC_can_produce == 0) ]]></tns:contents>
+    </tns:Constraint>
+
+    <!-- inconsistency criteria -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[M_ICMutationVariable * R_ICMutationVariable == 0 || M_ICMutationVariable + R_ICMutationVariable <= 100 ]]></tns:contents>      
+    </tns:Constraint>  
+  </tns:Constraints>
+</tns:Oracle>

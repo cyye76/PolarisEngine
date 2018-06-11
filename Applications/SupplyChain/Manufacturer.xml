@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>Manufacturer</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>product_type</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>requested</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>manufacturer_stock</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>complemented</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>factoryA_can_produce</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>factoryB_can_produce</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>factoryC_can_produce</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>task1</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive product_type requested</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task2</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive manufacturer_stock</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task3</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[manufacturer_stock := manufacturer_stock - requested ;complemented := requested ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task4</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send complemented</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task5</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive factoryA_can_produce</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task6</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[factoryA_can_produce := factoryA_can_produce + manufacturer_stock - requested; manufacturer_stock := 0 ; complemented := requested ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task7</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive factoryB_can_produce</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task8</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[complemented := requested ; factoryB_can_produce := factoryB_can_produce +factoryA_can_produce + manufacturer_stock - requested ; factoryA_can_produce := 0 ; manufacturer_stock := 0 ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task9</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive factoryC_can_produce</tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task10</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[complemented := requested ; factoryC_can_produce := factoryC_can_produce +factoryB_can_produce + factoryA_can_produce +manufacturer_stock - requested ;factoryB_can_produce := 0 ; factoryA_can_produce := 0 ; manufacturer_stock := 0 ;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>task11</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[complemented := factoryC_can_produce + factoryB_can_produce +factoryA_can_produce + manufacturer_stock ; factoryC_can_produce := 0 ; factoryB_can_produce := 0 ; factoryA_can_produce := 0 ; manufacturer_stock := 0 ;]]></tns:Effect>
+    </tns:Activity>
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>task1</tns:Source>
+      <tns:Sink>task2</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>task2</tns:Source>
+      <tns:Sink>task3</tns:Sink>
+      <tns:Guard><![CDATA[manufacturer_stock >= requested]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>task3</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>task2</tns:Source>
+      <tns:Sink>task5</tns:Sink>
+      <tns:Guard><![CDATA[requested > manufacturer_stock]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>task5</tns:Source>
+      <tns:Sink>task6</tns:Sink>
+      <tns:Guard><![CDATA[requested <= manufacturer_stock + factoryA_can_produce]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>task6</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>task5</tns:Source>
+      <tns:Sink>task7</tns:Sink>
+      <tns:Guard><![CDATA[requested > manufacturer_stock + factoryA_can_produce]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t8</tns:Name>
+      <tns:Source>task7</tns:Source>
+      <tns:Sink>task8</tns:Sink>
+      <tns:Guard><![CDATA[requested <= manufacturer_stock + factoryA_can_produce + factoryB_can_produce]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t9</tns:Name>
+      <tns:Source>task8</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t10</tns:Name>
+      <tns:Source>task7</tns:Source>
+      <tns:Sink>task9</tns:Sink>
+      <tns:Guard><![CDATA[requested > manufacturer_stock + factoryA_can_produce + factoryB_can_produce]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t11</tns:Name>
+      <tns:Source>task9</tns:Source>
+      <tns:Sink>task10</tns:Sink>
+      <tns:Guard><![CDATA[requested <= manufacturer_stock + factoryA_can_produce + factoryB_can_produce + factoryC_can_produce]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t12</tns:Name>
+      <tns:Source>task10</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t13</tns:Name>
+      <tns:Source>task9</tns:Source>
+      <tns:Sink>task11</tns:Sink>
+      <tns:Guard><![CDATA[requested > manufacturer_stock + factoryA_can_produce + factoryB_can_produce + factoryC_can_produce]]></tns:Guard>
+    </tns:Transition>
+    <tns:Transition>
+      <tns:Name>t14</tns:Name>
+      <tns:Source>task11</tns:Source>
+      <tns:Sink>task4</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+  </tns:Transitions>
+  <tns:StartTask>task1</tns:StartTask>
+</tns:Service>

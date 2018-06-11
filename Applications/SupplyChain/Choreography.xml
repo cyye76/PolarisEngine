@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ServiceChoreography xmlns:tns="http://www.example.org/ServiceChoreographySchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceChoreographySchema ../../src/scripts/Schema/ServiceChoreographySchema.xsd ">
+  <tns:Partners>
+    <tns:Partner>
+      <tns:Name>SupplyChainClient</tns:Name>
+      <tns:Port>amount</tns:Port>
+      <tns:Port>product_type</tns:Port>
+      <tns:Port>stockA</tns:Port>
+      <tns:Port>stockB</tns:Port>
+      <tns:Port>stockC</tns:Port>
+      <tns:Port>manufacturer_stock</tns:Port>
+      <tns:Port>deliver</tns:Port>
+      <tns:Port>factoryA_can_produce</tns:Port>
+      <tns:Port>factoryB_can_produce</tns:Port>
+      <tns:Port>factoryC_can_produce</tns:Port>
+    </tns:Partner>
+    <tns:Partner>
+      <tns:Name>Retailer</tns:Name>
+      <tns:Port>amount</tns:Port>
+      <tns:Port>product_type</tns:Port>
+      <tns:Port>stockA</tns:Port>
+      <tns:Port>stockB</tns:Port>
+      <tns:Port>stockC</tns:Port>
+      <tns:Port>manufacturer_stock</tns:Port>
+      <tns:Port>deliver</tns:Port>
+      <tns:Port>factoryA_can_produce</tns:Port>
+      <tns:Port>factoryB_can_produce</tns:Port>
+      <tns:Port>factoryC_can_produce</tns:Port>
+      <tns:Port>requested</tns:Port>
+      <tns:Port>complemented</tns:Port>
+    </tns:Partner>
+    <tns:Partner>
+      <tns:Name>Manufacturer</tns:Name>      
+      <tns:Port>product_type</tns:Port>      
+      <tns:Port>manufacturer_stock</tns:Port>
+      <tns:Port>factoryA_can_produce</tns:Port>
+      <tns:Port>factoryB_can_produce</tns:Port>
+      <tns:Port>factoryC_can_produce</tns:Port>
+      <tns:Port>requested</tns:Port>
+      <tns:Port>complemented</tns:Port>
+    </tns:Partner>
+  </tns:Partners>
+</tns:ServiceChoreography>
