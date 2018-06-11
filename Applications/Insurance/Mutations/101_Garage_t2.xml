@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Garage</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>101_Garage_t2</mutationName>
+    <contents><![CDATA[garageNo != 2 ]]></contents>
+</mutation>

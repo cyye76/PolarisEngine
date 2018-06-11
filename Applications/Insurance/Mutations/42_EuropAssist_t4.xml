@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>EuropAssist</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>42_EuropAssist_t4</mutationName>
+    <contents><![CDATA[! reject ]]></contents>
+</mutation>

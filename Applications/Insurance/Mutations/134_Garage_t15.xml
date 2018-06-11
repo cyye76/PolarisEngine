@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Garage</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>134_Garage_t15</mutationName>
+    <contents><![CDATA[needNegotiate && estimate >= 638 ]]></contents>
+</mutation>

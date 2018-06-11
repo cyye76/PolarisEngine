@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Garage</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>83_Garage_negotiate2</mutationName>
+    <contents><![CDATA[invoice := repairCharge * 6 / 10 ; ]]></contents>
+</mutation>
