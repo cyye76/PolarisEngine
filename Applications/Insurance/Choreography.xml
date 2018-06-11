@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ServiceChoreography xmlns:tns="http://www.example.org/ServiceChoreographySchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceChoreographySchema ../../src/scripts/Schema/ServiceChoreographySchema.xsd ">
+  <tns:Partners>
+    <tns:Partner>
+      <tns:Name>client</tns:Name>
+      <tns:Port>customerID</tns:Port>
+      <tns:Port>damageL</tns:Port>
+      <tns:Port>location</tns:Port>
+      <tns:Port>paid</tns:Port>
+      <tns:Port>unpaid</tns:Port>
+      <tns:Port>reject</tns:Port>
+    </tns:Partner>
+    
+    <tns:Partner>
+      <tns:Name>AGFIL</tns:Name>
+      <tns:Port>caseID</tns:Port>
+      <tns:Port>damageL</tns:Port>
+      <tns:Port>bottom</tns:Port>
+      <tns:Port>accept</tns:Port>
+      <tns:Port>invoice</tns:Port>
+      <tns:Port>paid</tns:Port>
+      <tns:Port>unpaid</tns:Port>
+    </tns:Partner>
+    
+    <tns:Partner>
+      <tns:Name>Assessor</tns:Name>
+      <tns:Port>claimprice</tns:Port>
+      <tns:Port>needNegotiate</tns:Port>
+      <tns:Port>finalCost</tns:Port>
+      <tns:Port>repairCharge</tns:Port>      
+      <tns:Port>confirm</tns:Port>
+    </tns:Partner>
+    
+    <tns:Partner>
+      <tns:Name>EuropAssist</tns:Name>
+      <tns:Port>customerID</tns:Port>
+      <tns:Port>damageL</tns:Port>
+      <tns:Port>location</tns:Port>
+      <tns:Port>garageNo</tns:Port>
+      <tns:Port>caseID</tns:Port>
+      <tns:Port>reject</tns:Port>
+    </tns:Partner>
+    
+    <tns:Partner>
+      <tns:Name>LEECS</tns:Name>
+      <tns:Port>bottom</tns:Port>
+      <tns:Port>estimate</tns:Port>
+      <tns:Port>claimprice</tns:Port>
+      <tns:Port>finalCost</tns:Port>
+      <tns:Port>confirm</tns:Port>
+      <tns:Port>accept</tns:Port>
+    </tns:Partner>
+    
+    <tns:Partner>
+      <tns:Name>Garage</tns:Name>
+      <tns:Port>garageNo</tns:Port>
+      <tns:Port>damageL</tns:Port>
+      <tns:Port>location</tns:Port>
+      <tns:Port>repairCharge</tns:Port>
+      <tns:Port>estimate</tns:Port>
+      <tns:Port>needNegotiate</tns:Port>
+      <tns:Port>confirm</tns:Port>
+      <tns:Port>invoice</tns:Port>
+      
+    </tns:Partner>
+  </tns:Partners>
+</tns:ServiceChoreography>

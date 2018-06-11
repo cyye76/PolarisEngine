@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>client</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>customerID</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~100</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>damageL</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~5</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>location</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~5</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>paid</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>unpaid</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>reject</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>succeed</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>      
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>reportaccident</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send customerID damageL location</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>receivevalidation</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive reject</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>receivefinalresult</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive paid unpaid</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>quit</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[succeed := !reject && paid > 0 ;]]></tns:Effect>
+    </tns:Activity>
+    
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>reportaccident</tns:Source>
+      <tns:Sink>receivevalidation</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>receivevalidation</tns:Source>
+      <tns:Sink>receivefinalresult</tns:Sink>
+      <tns:Guard><![CDATA[!reject]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>receivevalidation</tns:Source>
+      <tns:Sink>quit</tns:Sink>
+      <tns:Guard><![CDATA[reject]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>receivefinalresult</tns:Source>
+      <tns:Sink>quit</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+  </tns:Transitions>
+  <tns:StartTask>reportaccident</tns:StartTask>
+</tns:Service>

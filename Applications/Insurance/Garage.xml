@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>Garage</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>garageNo</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>damageL</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>location</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>repairCharge</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>estimate</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>needNegotiate</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>confirm</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>invoice</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>      
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>obtainappointment</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive garageNo damageL location</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>garage1</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := (damageL + garageNo - location) * 400;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>garage2</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := (damageL + garageNo - location) * 300;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>garage3</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := (damageL + garageNo - location) * 200;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>garage4</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := (damageL + garageNo - location) * 150;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>garage5</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := (damageL + garageNo - location) * 100;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>estimatecost</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[estimate := repairCharge;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>reportestimate</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send estimate</tns:Effect>
+    </tns:Activity>
+
+    <tns:Activity>
+      <tns:Name>receivenegotiaterequest</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive needNegotiate</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>negotiate1</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := repairCharge * 8 / 10;]]></tns:Effect>
+    </tns:Activity>
+    <tns:Activity>
+      <tns:Name>negotiate2</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := repairCharge * 6 / 10;]]></tns:Effect>
+    </tns:Activity>
+
+    <tns:Activity>
+      <tns:Name>sendcharge</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send repairCharge</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>receiveconfirm</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive confirm</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>prepareinvoice</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[invoice := repairCharge;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>sendinvoice</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send invoice</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>quit</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[repairCharge := 0;]]></tns:Effect>
+    </tns:Activity>
+    
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>obtainappointment</tns:Source>
+      <tns:Sink>garage1</tns:Sink>
+      <tns:Guard><![CDATA[garageNo == 1]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>obtainappointment</tns:Source>
+      <tns:Sink>garage2</tns:Sink>
+      <tns:Guard><![CDATA[garageNo == 2]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>obtainappointment</tns:Source>
+      <tns:Sink>garage3</tns:Sink>
+      <tns:Guard><![CDATA[garageNo == 3]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>obtainappointment</tns:Source>
+      <tns:Sink>garage4</tns:Sink>
+      <tns:Guard><![CDATA[garageNo == 4]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>obtainappointment</tns:Source>
+      <tns:Sink>garage5</tns:Sink>
+      <tns:Guard><![CDATA[garageNo == 5]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>garage1</tns:Source>
+      <tns:Sink>estimatecost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>garage2</tns:Source>
+      <tns:Sink>estimatecost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t8</tns:Name>
+      <tns:Source>garage3</tns:Source>
+      <tns:Sink>estimatecost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t9</tns:Name>
+      <tns:Source>garage4</tns:Source>
+      <tns:Sink>estimatecost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t10</tns:Name>
+      <tns:Source>garage5</tns:Source>
+      <tns:Sink>estimatecost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t11</tns:Name>
+      <tns:Source>estimatecost</tns:Source>
+      <tns:Sink>reportestimate</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t12</tns:Name>
+      <tns:Source>reportestimate</tns:Source>
+      <tns:Sink>receivenegotiaterequest</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t13</tns:Name>
+      <tns:Source>receivenegotiaterequest</tns:Source>
+      <tns:Sink>receiveconfirm</tns:Sink>
+      <tns:Guard><![CDATA[!needNegotiate]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t14</tns:Name>
+      <tns:Source>receivenegotiaterequest</tns:Source>
+      <tns:Sink>negotiate1</tns:Sink>
+      <tns:Guard><![CDATA[needNegotiate && estimate < 600]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t15</tns:Name>
+      <tns:Source>receivenegotiaterequest</tns:Source>
+      <tns:Sink>negotiate2</tns:Sink>
+      <tns:Guard><![CDATA[needNegotiate && estimate >= 600]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t16</tns:Name>
+      <tns:Source>negotiate1</tns:Source>
+      <tns:Sink>sendcharge</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t17</tns:Name>
+      <tns:Source>negotiate2</tns:Source>
+      <tns:Sink>sendcharge</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t18</tns:Name>
+      <tns:Source>sendcharge</tns:Source>
+      <tns:Sink>receiveconfirm</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t19</tns:Name>
+      <tns:Source>receiveconfirm</tns:Source>
+      <tns:Sink>quit</tns:Sink>
+      <tns:Guard><![CDATA[!confirm]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t20</tns:Name>
+      <tns:Source>receiveconfirm</tns:Source>
+      <tns:Sink>prepareinvoice</tns:Sink>
+      <tns:Guard><![CDATA[confirm]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t21</tns:Name>
+      <tns:Source>prepareinvoice</tns:Source>
+      <tns:Sink>sendinvoice</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+  </tns:Transitions>
+  <tns:StartTask>obtainappointment</tns:StartTask>
+</tns:Service>

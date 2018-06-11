@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Oracle xmlns:tns="http://www.example.org/OracleSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/OracleSchema ../../src/scripts/Schema/OracleSchema.xsd ">
+  <tns:Name>tns:Name</tns:Name>
+  <tns:VariableMappings>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>customerID</tns:VarName>
+      <tns:OracleVariable>E_customerID</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>damageL</tns:VarName>
+      <tns:OracleVariable>E_damageL</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>location</tns:VarName>
+      <tns:OracleVariable>E_location</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>garageNo</tns:VarName>
+      <tns:OracleVariable>E_garageNo</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>caseID</tns:VarName>
+      <tns:OracleVariable>E_caseID</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>reject</tns:VarName>
+      <tns:OracleVariable>E_reject</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>EuropAssist</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>E_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>
+    
+    <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>caseID</tns:VarName>
+      <tns:OracleVariable>AG_caseID</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>damageL</tns:VarName>
+      <tns:OracleVariable>AG_damageL</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>bottom</tns:VarName>
+      <tns:OracleVariable>AG_bottom</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>accept</tns:VarName>
+      <tns:OracleVariable>AG_accept</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>invoice</tns:VarName>
+      <tns:OracleVariable>AG_invoice</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>paid</tns:VarName>
+      <tns:OracleVariable>AG_paid</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>unpaid</tns:VarName>
+      <tns:OracleVariable>AG_unpaid</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>AGFIL</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>AG_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>
+    
+     <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>bottom</tns:VarName>
+      <tns:OracleVariable>L_bottom</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>estimate</tns:VarName>
+      <tns:OracleVariable>L_estimate</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>claimprice</tns:VarName>
+      <tns:OracleVariable>L_claimprice</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>finalCost</tns:VarName>
+      <tns:OracleVariable>L_finalCost</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>confirm</tns:VarName>
+      <tns:OracleVariable>L_confirm</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>accept</tns:VarName>
+      <tns:OracleVariable>L_accept</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>LEECS</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>L_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>
+    
+    <tns:VariableMapping>
+      <tns:ServiceName>Assessor</tns:ServiceName>
+      <tns:VarName>claimprice</tns:VarName>
+      <tns:OracleVariable>AS_claimprice</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Assessor</tns:ServiceName>
+      <tns:VarName>needNegotiate</tns:VarName>
+      <tns:OracleVariable>AS_needNegotiate</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Assessor</tns:ServiceName>
+      <tns:VarName>finalCost</tns:VarName>
+      <tns:OracleVariable>AS_finalCost</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Assessor</tns:ServiceName>
+      <tns:VarName>repairCharge</tns:VarName>
+      <tns:OracleVariable>AS_repairCharge</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Assessor</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>AS_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>
+    
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>garageNo</tns:VarName>
+      <tns:OracleVariable>G_garageNo</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>damageL</tns:VarName>
+      <tns:OracleVariable>G_damageL</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>location</tns:VarName>
+      <tns:OracleVariable>G_location</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>repairCharge</tns:VarName>
+      <tns:OracleVariable>G_repairCharge</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>estimate</tns:VarName>
+      <tns:OracleVariable>G_estimate</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>needNegotiate</tns:VarName>
+      <tns:OracleVariable>G_needNegotiate</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>confirm</tns:VarName>
+      <tns:OracleVariable>G_confirm</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>invoice</tns:VarName>
+      <tns:OracleVariable>G_invoice</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>Garage</tns:ServiceName>
+      <tns:VarName>ICMutationVariable</tns:VarName>
+      <tns:OracleVariable>G_ICMutationVariable</tns:OracleVariable>
+    </tns:VariableMapping>
+    
+    
+     <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>customerID</tns:VarName>
+      <tns:OracleVariable>C_customerID</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>damageL</tns:VarName>
+      <tns:OracleVariable>C_damageL</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>location</tns:VarName>
+      <tns:OracleVariable>C_location</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>paid</tns:VarName>
+      <tns:OracleVariable>C_paid</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>unpaid</tns:VarName>
+      <tns:OracleVariable>C_unpaid</tns:OracleVariable>
+    </tns:VariableMapping>
+    <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>reject</tns:VarName>
+      <tns:OracleVariable>C_reject</tns:OracleVariable>
+    </tns:VariableMapping>
+     <tns:VariableMapping>
+      <tns:ServiceName>client</tns:ServiceName>
+      <tns:VarName>succeed</tns:VarName>
+      <tns:OracleVariable>C_succeed</tns:OracleVariable>
+    </tns:VariableMapping>
+   
+    
+  </tns:VariableMappings>
+  <tns:Constraints>
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID < 80 || C_reject == true]]></tns:contents>
+    </tns:Constraint>
+    
+    <!--GarageNo = 1 Location >= damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 1 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 400 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>    
+
+
+   <!--GarageNo = 2 Location >= damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom ||( C_paid == G_invoice && C_unpaid == 0  && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 2 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 300 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom ||( C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint> 
+    
+    
+  <!--GarageNo = 3 Location >= damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom ||( C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 3 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 200 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>     
+    
+    
+ <!--GarageNo = 4 Location >= damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost  )) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 4 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 150 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>      
+    
+    
+ <!--GarageNo = 5 Location >= damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_location != 5 || C_location < C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_location && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == C_damageL * 100 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>      
+    
+    
+    
+    <!--GarageNo = 1 Location < damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 1 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 400 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+
+
+   <!--GarageNo = 2 Location < damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 2 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 300 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint> 
+    
+    
+  <!--GarageNo = 3 Location < damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom ||( C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 3 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 200 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>     
+    
+    
+ <!--GarageNo = 4 Location < damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost )) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 4 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 150 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>      
+    
+    
+ <!--GarageNo = 5 Location < damageL -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate > 500 || L_finalCost == L_estimate) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost) )) ]]></tns:contents>
+    </tns:Constraint>    
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0) )) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate <= 500 || L_estimate >= 600 || L_finalCost == L_estimate * 8 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>    
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) && (L_accept || (C_paid == 0 && C_unpaid == 0 && G_invoice +1 == 0)) ) ]]></tns:contents>
+    </tns:Constraint>
+
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost) &&  (!L_accept || G_invoice<= AG_bottom || (C_paid == AG_bottom && C_unpaid == G_invoice - AG_bottom && G_invoice == L_finalCost ) )) ]]></tns:contents>
+    </tns:Constraint>
+    
+    <tns:Constraint>
+      <tns:contents><![CDATA[C_customerID >= 80 || C_damageL != 5 || C_location >= C_damageL || (E_caseID == C_customerID /10 && E_garageNo == C_damageL && AG_bottom == E_caseID * C_damageL * 60 && L_estimate == (C_damageL * 2 - C_location) * 100 &&  (L_estimate <= 500 || L_estimate < 600 || L_finalCost == L_estimate * 6 /10) && L_accept == (AG_bottom * 12 /10 >= L_finalCost)  &&  (!L_accept || G_invoice > AG_bottom || (C_paid == G_invoice && C_unpaid == 0 && G_invoice == L_finalCost)) ) ]]></tns:contents>
+    </tns:Constraint>          
+
+
+  <!-- inconsistency criteria -->
+    <tns:Constraint>
+      <tns:contents><![CDATA[(AG_ICMutationVariable * AS_ICMutationVariable == 0 &&  AG_ICMutationVariable * E_ICMutationVariable == 0 && AG_ICMutationVariable * G_ICMutationVariable == 0 && AG_ICMutationVariable * L_ICMutationVariable == 0 && AS_ICMutationVariable * E_ICMutationVariable == 0 && AS_ICMutationVariable * G_ICMutationVariable == 0 && AS_ICMutationVariable * L_ICMutationVariable == 0 && E_ICMutationVariable * G_ICMutationVariable == 0 && E_ICMutationVariable * L_ICMutationVariable == 0 && G_ICMutationVariable * L_ICMutationVariable == 0) || (AG_ICMutationVariable + AS_ICMutationVariable + E_ICMutationVariable + G_ICMutationVariable + L_ICMutationVariable <= 100)]]></tns:contents>      
+    </tns:Constraint>
+        
+  </tns:Constraints>
+</tns:Oracle>

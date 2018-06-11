@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>Assessor</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>claimprice</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>needNegotiate</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>finalCost</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>repairCharge</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>      
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>obtaintask</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive claimprice</tns:Effect>
+    </tns:Activity>    
+    
+    <tns:Activity>
+      <tns:Name>inspectcar</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[needNegotiate := claimprice > 500 ;]]></tns:Effect>
+    </tns:Activity>    
+    
+    <tns:Activity>
+      <tns:Name>sendnegotiaterequest</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send needNegotiate</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>receivecharge</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive repairCharge</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>preparereport1</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[finalCost := repairCharge;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>preparereport2</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[finalCost := claimprice;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>reportfinalcost</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send finalCost</tns:Effect>
+    </tns:Activity>
+    
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>obtaintask</tns:Source>
+      <tns:Sink>inspectcar</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>inspectcar</tns:Source>
+      <tns:Sink>sendnegotiaterequest</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>sendnegotiaterequest</tns:Source>
+      <tns:Sink>preparereport2</tns:Sink>
+      <tns:Guard><![CDATA[!needNegotiate]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>sendnegotiaterequest</tns:Source>
+      <tns:Sink>receivecharge</tns:Sink>
+      <tns:Guard><![CDATA[needNegotiate]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>receivecharge</tns:Source>
+      <tns:Sink>preparereport1</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>preparereport1</tns:Source>
+      <tns:Sink>reportfinalcost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>preparereport2</tns:Source>
+      <tns:Sink>reportfinalcost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+  </tns:Transitions>
+  <tns:StartTask>obtaintask</tns:StartTask>
+</tns:Service>

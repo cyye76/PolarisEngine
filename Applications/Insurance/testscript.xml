@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:TestingScript xmlns:tns="http://www.example.org/TestingScriptSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/TestingScriptSchema ../../src/scripts/Schema/TestingScriptSchema.xsd ">
+  <tns:Name>TestScript</tns:Name>
+  <tns:Services>
+    <tns:serviceName><![CDATA[Applications/Insurance/AGFIL.xml]]></tns:serviceName>
+    <tns:serviceName><![CDATA[Applications/Insurance/Assessor.xml]]></tns:serviceName>
+    <tns:serviceName><![CDATA[Applications/Insurance/EuropAssist.xml]]></tns:serviceName>
+    <tns:serviceName><![CDATA[Applications/Insurance/Garage.xml]]></tns:serviceName>
+    <tns:serviceName><![CDATA[Applications/Insurance/LeeCS.xml]]></tns:serviceName>
+  </tns:Services>
+  <tns:TestCase>
+    <tns:Name><![CDATA[Applications/Insurance/InsuranceClient.xml]]></tns:Name>
+  </tns:TestCase>
+  <tns:Choreography>
+    <tns:Name><![CDATA[Applications/Insurance/Choreography.xml]]></tns:Name>
+  </tns:Choreography>
+  <tns:Oracle>
+    <tns:Name><![CDATA[Applications/Insurance/Oracle.xml]]></tns:Name>
+  </tns:Oracle>
+  <tns:Mutations>
+    <tns:CategoryName><![CDATA[Applications/Insurance/Mutations/mutations.txt]]></tns:CategoryName>
+  </tns:Mutations>
+  <tns:InconsistencyMutations>
+    <tns:CategoryName><![CDATA[Applications/Insurance/INCMutations/mutations.txt]]></tns:CategoryName>
+  </tns:InconsistencyMutations>
+</tns:TestingScript>

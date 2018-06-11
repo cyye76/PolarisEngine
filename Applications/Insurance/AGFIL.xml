@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>AGFIL</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>caseID</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>damageL</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>bottom</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>    
+    <tns:Variable>
+      <tns:Name>accept</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>invoice</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>paid</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>unpaid</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>  
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>receiveclaim</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive caseID damageL</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>calculateclaim</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[bottom := caseID * damageL * 60;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>forwardclaim</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send bottom</tns:Effect>
+    </tns:Activity>
+        
+    <tns:Activity>
+      <tns:Name>obtainreport</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive accept</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>receiveinvoice</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive invoice</tns:Effect>
+    </tns:Activity>
+
+    <tns:Activity>
+      <tns:Name>finaliseclaim1</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[paid := bottom; unpaid := invoice - bottom;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>finaliseclaim2</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[paid := invoice; unpaid := 0;]]></tns:Effect>
+    </tns:Activity>    
+    
+    <tns:Activity>
+      <tns:Name>finaliseclaim3</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[paid := 0; unpaid := 0;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>sendfinalbill</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send paid unpaid</tns:Effect>
+    </tns:Activity>    
+    
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>receiveclaim</tns:Source>
+      <tns:Sink>calculateclaim</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>calculateclaim</tns:Source>
+      <tns:Sink>forwardclaim</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>forwardclaim</tns:Source>
+      <tns:Sink>obtainreport</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>obtainreport</tns:Source>
+      <tns:Sink>receiveinvoice</tns:Sink>
+      <tns:Guard><![CDATA[accept]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>receiveinvoice</tns:Source>
+      <tns:Sink>finaliseclaim1</tns:Sink>
+      <tns:Guard><![CDATA[invoice > bottom]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>finaliseclaim1</tns:Source>
+      <tns:Sink>sendfinalbill</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>receiveinvoice</tns:Source>
+      <tns:Sink>finaliseclaim2</tns:Sink>
+      <tns:Guard><![CDATA[invoice <= bottom]]></tns:Guard>
+    </tns:Transition>
+
+    <tns:Transition>
+      <tns:Name>t8</tns:Name>
+      <tns:Source>finaliseclaim2</tns:Source>
+      <tns:Sink>sendfinalbill</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+
+    
+    <tns:Transition>
+      <tns:Name>t9</tns:Name>
+      <tns:Source>obtainreport</tns:Source>
+      <tns:Sink>finaliseclaim3</tns:Sink>
+      <tns:Guard><![CDATA[!accept]]></tns:Guard>
+    </tns:Transition>
+
+    <tns:Transition>
+      <tns:Name>t10</tns:Name>
+      <tns:Source>finaliseclaim3</tns:Source>
+      <tns:Sink>sendfinalbill</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+
+    
+  </tns:Transitions>
+  <tns:StartTask>receiveclaim</tns:StartTask>
+</tns:Service>

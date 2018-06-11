@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>LEECS</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>bottom</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>estimate</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>claimprice</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>  
+    <tns:Variable>
+      <tns:Name>finalCost</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>   
+    <tns:Variable>
+      <tns:Name>confirm</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>
+    </tns:Variable>    
+     <tns:Variable>
+      <tns:Name>accept</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>
+    </tns:Variable>    
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>      
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>obtainclaim</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive bottom</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>contactgarage</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive estimate</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>estimatetheclaim</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[claimprice := estimate; ]]></tns:Effect>
+    </tns:Activity>    
+    
+    <tns:Activity>
+      <tns:Name>assignadjuster</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send claimprice</tns:Effect>
+    </tns:Activity>
+        
+    <tns:Activity>
+      <tns:Name>receivefinalCost</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive finalCost</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>decide</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[confirm := bottom * 12 / 10 >= finalCost; accept := confirm;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>confirm</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send confirm</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>sendreport</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send accept</tns:Effect>
+    </tns:Activity>
+    
+  </tns:Activities>
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>obtainclaim</tns:Source>
+      <tns:Sink>contactgarage</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>contactgarage</tns:Source>
+      <tns:Sink>estimatetheclaim</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>estimatetheclaim</tns:Source>
+      <tns:Sink>assignadjuster</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>assignadjuster</tns:Source>
+      <tns:Sink>receivefinalCost</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>receivefinalCost</tns:Source>
+      <tns:Sink>decide</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>decide</tns:Source>
+      <tns:Sink>confirm</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>confirm</tns:Source>
+      <tns:Sink>sendreport</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+  </tns:Transitions>
+  <tns:StartTask>obtainclaim</tns:StartTask>
+</tns:Service>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Service xmlns:tns="http://www.example.org/ServiceSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/ServiceSchema ../../src/scripts/Schema/ServiceSchema.xsd ">
+  <tns:Name>EuropAssist</tns:Name>
+  <tns:Variables>
+    <tns:Variable>
+      <tns:Name>customerID</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>damageL</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>location</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>garageNo</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>caseID</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>-1</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>reject</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>isValidCust</tns:Name>
+      <tns:Type>BOOLEAN</tns:Type>
+      <tns:Value>false</tns:Value>      
+    </tns:Variable>
+    <tns:Variable>
+      <tns:Name>ICMutationVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>0</tns:Value>
+    </tns:Variable>      
+    <tns:Variable>
+      <tns:Name>RandomVariable</tns:Name>
+      <tns:Type>INTEGER</tns:Type>
+      <tns:Value>1~99</tns:Value>
+    </tns:Variable>
+  </tns:Variables>
+  <tns:Activities>
+    <tns:Activity>
+      <tns:Name>gatherinfo</tns:Name>
+      <tns:Type>ReceiveTask</tns:Type>
+      <tns:Effect>receive customerID damageL location</tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+    	<tns:Name>validateinfo</tns:Name>
+    	<tns:Type>LocalTask</tns:Type>
+    	<tns:Effect><![CDATA[isValidCust := customerID >0 && customerID<80 ; reject := !isValidCust;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+    	<tns:Name>assigngarage1</tns:Name>
+    	<tns:Type>LocalTask</tns:Type>
+    	<tns:Effect><![CDATA[garageNo := location;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+    	<tns:Name>assigngarage2</tns:Name>
+    	<tns:Type>LocalTask</tns:Type>
+    	<tns:Effect><![CDATA[garageNo := damageL;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>arrangegarage</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send garageNo </tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>preparenotify</tns:Name>
+      <tns:Type>LocalTask</tns:Type>
+      <tns:Effect><![CDATA[caseID := customerID / 10 ;]]></tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>notifyAGFIL</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send caseID </tns:Effect>
+    </tns:Activity>
+    
+    <tns:Activity>
+      <tns:Name>sendrejectinfo</tns:Name>
+      <tns:Type>SendTask</tns:Type>
+      <tns:Effect>send reject</tns:Effect>
+    </tns:Activity>
+                    
+  </tns:Activities>
+  
+  <tns:Transitions>
+    <tns:Transition>
+      <tns:Name>t1</tns:Name>
+      <tns:Source>gatherinfo</tns:Source>
+      <tns:Sink>validateinfo</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t2</tns:Name>
+      <tns:Source>validateinfo</tns:Source>
+      <tns:Sink>assigngarage1</tns:Sink>
+      <tns:Guard><![CDATA[isValidCust && location >= damageL]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t3</tns:Name>
+      <tns:Source>validateinfo</tns:Source>
+      <tns:Sink>assigngarage2</tns:Sink>
+      <tns:Guard><![CDATA[isValidCust && location < damageL]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t4</tns:Name>
+      <tns:Source>validateinfo</tns:Source>
+      <tns:Sink>sendrejectinfo</tns:Sink>
+      <tns:Guard><![CDATA[!isValidCust]]></tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t5</tns:Name>
+      <tns:Source>assigngarage1</tns:Source>
+      <tns:Sink>arrangegarage</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t6</tns:Name>
+      <tns:Source>assigngarage2</tns:Source>
+      <tns:Sink>arrangegarage</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t7</tns:Name>
+      <tns:Source>arrangegarage</tns:Source>
+      <tns:Sink>preparenotify</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+   
+    <tns:Transition>
+      <tns:Name>t8</tns:Name>
+      <tns:Source>preparenotify</tns:Source>
+      <tns:Sink>notifyAGFIL</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+    <tns:Transition>
+      <tns:Name>t9</tns:Name>
+      <tns:Source>notifyAGFIL</tns:Source>
+      <tns:Sink>sendrejectinfo</tns:Sink>
+      <tns:Guard>true</tns:Guard>
+    </tns:Transition>
+    
+  </tns:Transitions>
+  <tns:StartTask>gatherinfo</tns:StartTask>
+</tns:Service>
