@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Manufacturer</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>14_Manufacturer_task6</mutationName>
+    <contents><![CDATA[factoryA_can_produce := factoryA_can_produce + factoryC_can_produce - requested ; manufacturer_stock := 0 ; complemented := requested ; ]]></contents>
+</mutation>
