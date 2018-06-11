@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Manufacturer</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>136_Manufacturer_t10</mutationName>
+    <contents><![CDATA[factoryA_can_produce > manufacturer_stock + factoryA_can_produce + factoryB_can_produce ]]></contents>
+</mutation>

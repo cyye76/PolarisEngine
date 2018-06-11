@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Retailer</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>13_Retailer_task5</mutationName>
+    <contents><![CDATA[deliver := stockA ; requested := amount + stockA ; stockA := 0 ; ]]></contents>
+</mutation>

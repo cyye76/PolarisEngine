@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Retailer</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>23_Retailer_task8</mutationName>
+    <contents><![CDATA[deliver := deliver / complemented ; ]]></contents>
+</mutation>

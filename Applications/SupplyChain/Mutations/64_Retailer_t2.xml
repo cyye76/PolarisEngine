@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Retailer</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>64_Retailer_t2</mutationName>
+    <contents><![CDATA[factoryA_can_produce >= amount ]]></contents>
+</mutation>
