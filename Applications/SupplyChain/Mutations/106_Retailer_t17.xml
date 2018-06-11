@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Retailer</serviceName>
+    <type>TransitionMutation</type>
+    <mutationName>106_Retailer_t17</mutationName>
+    <contents><![CDATA[stockC > amount ]]></contents>
+</mutation>
