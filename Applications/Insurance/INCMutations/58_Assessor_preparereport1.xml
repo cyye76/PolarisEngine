@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Assessor</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>58_Assessor_preparereport1</mutationName>
+    <contents><![CDATA[finalCost := repairCharge;ICMutationVariable:=71;]]></contents>
+</mutation>

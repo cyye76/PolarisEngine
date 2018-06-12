@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>AGFIL</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>73_AGFIL_calculateclaim</mutationName>
+    <contents><![CDATA[bottom := caseID * damageL * 60;ICMutationVariable:=43;]]></contents>
+</mutation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Garage</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>92_Garage_quit</mutationName>
+    <contents><![CDATA[repairCharge := 0;ICMutationVariable:=4;]]></contents>
+</mutation>
