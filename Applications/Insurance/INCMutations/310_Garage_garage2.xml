@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Garage</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>310_Garage_garage2</mutationName>
+    <contents><![CDATA[repairCharge := (damageL + garageNo - location) * 300;ICMutationVariable:= RandomVariable;]]></contents>
+</mutation>
