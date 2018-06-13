@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>AGFIL</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>119_AGFIL_finaliseclaim2</mutationName>
+    <contents><![CDATA[paid := invoice; unpaid := 0;ICMutationVariable:=36;]]></contents>
+</mutation>
