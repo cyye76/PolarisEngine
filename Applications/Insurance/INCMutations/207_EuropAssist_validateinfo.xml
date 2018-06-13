@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>EuropAssist</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>207_EuropAssist_validateinfo</mutationName>
+    <contents><![CDATA[isValidCust := customerID >0 && customerID<80 ; reject := !isValidCust;ICMutationVariable:=35;]]></contents>
+</mutation>

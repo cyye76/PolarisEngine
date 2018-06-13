@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>LEECS</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>164_LEECS_decide</mutationName>
+    <contents><![CDATA[confirm := bottom * 12 / 10 >= finalCost; accept := confirm;ICMutationVariable:=39;]]></contents>
+</mutation>
