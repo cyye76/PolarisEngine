@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>AGFIL</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>229_AGFIL_finaliseclaim3</mutationName>
+    <contents><![CDATA[paid := 0; unpaid := 0;ICMutationVariable:= RandomVariable;]]></contents>
+</mutation>
