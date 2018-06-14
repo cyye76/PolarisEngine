@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>EuropAssist</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1432_EuropAssist_assigngarage2</mutationName>
+    <contents><![CDATA[garageNo := damageL;ICMutationVariable:=location + 23 ;]]></contents>
+</mutation>

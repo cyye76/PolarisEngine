@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>EuropAssist</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>1450_EuropAssist_preparenotify</mutationName>
+    <contents><![CDATA[caseID := customerID / 10 ;ICMutationVariable:=customerID + 8 ;]]></contents>
+</mutation>
