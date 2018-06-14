@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mutation xmlns="http://www.example.org/MutationSchema">
-    <serviceName>Approval</serviceName>
-    <type>TaskMutation</type>
-    <mutationName>3_Approval_task5</mutationName>
-    <contents><![CDATA[amount := amount ; ]]></contents>
-</mutation>
