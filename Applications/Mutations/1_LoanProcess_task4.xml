@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mutation xmlns="http://www.example.org/MutationSchema">
-    <serviceName>LoanProcess</serviceName>
-    <type>TaskMutation</type>
-    <mutationName>1_LoanProcess_task4</mutationName>
-    <contents><![CDATA[customerID := amount ; ]]></contents>
-</mutation>
