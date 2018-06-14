@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mutation xmlns="http://www.example.org/MutationSchema">
-    <serviceName>Approval</serviceName>
-    <type>TransitionMutation</type>
-    <mutationName>12_Approval_t3</mutationName>
-    <contents><![CDATA[false ]]></contents>
-</mutation>
