@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mutation xmlns="http://www.example.org/MutationSchema">
-    <serviceName>RiskAssessment</serviceName>
-    <type>TransitionMutation</type>
-    <mutationName>9_RiskAssessment_t2</mutationName>
-    <contents><![CDATA[hasrecord != false ]]></contents>
-</mutation>
