@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mutation xmlns="http://www.example.org/MutationSchema">
+    <serviceName>Garage</serviceName>
+    <type>TaskMutation</type>
+    <mutationName>476_Garage_prepareinvoice</mutationName>
+    <contents><![CDATA[invoice := repairCharge;ICMutationVariable:= RandomVariable;]]></contents>
+</mutation>
